@@ -22,6 +22,8 @@
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 
     <!-- favicons
     ================================================== -->
@@ -96,6 +98,10 @@
                         echo('<a href="index.php?page=connection" title="">Connection</a>');
                      }
                     ?>
+                </li>
+                <li><div class="comment__avatar">
+                                <img class="avatar" src="images/avatars/<?php echo$_SESSION['profil_picture'] ?>" alt="" width="50" height="50">
+                            </div>
                 </li>
             </ul> <!-- end header__nav -->
 

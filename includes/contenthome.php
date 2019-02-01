@@ -121,13 +121,13 @@
                         <div class='item-entry__date'>
                             <a href='index.php?page=details&id=".$value['id']."'>".date('m-d-y',strtotime($value['up_date']))."</a></br>";
 
-                        if (isset($_SESSION['id']))
+                        if (isset($_SESSION['id']) && isset($_SESSION['level']) && $_SESSION['level'] == 1)
                         {   
                             echo "
                             <div class'icon'>
                                 <a href='index.php?page=delete&id=".$value['id']."'>
                                 <i class='fas fa-trash-alt'></i></a>
-                                <a href='function/edit.php'>
+                                <a href='index.php?page=edit&id=".$value['id']."'>
                                 <i class='fas fa-edit'></i></a>
                             </div>";
                         }

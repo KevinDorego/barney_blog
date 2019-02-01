@@ -49,14 +49,11 @@
                          echo utf8_encode($post['post_content']);
  
                     ?></p>
-                    
                 
-                
-
-               
-
             </div> <!-- s-entry__main -->
-
+            <div>
+                <img src="images/<?php echo $post['file']?>">
+            </div>
         </article> <!-- end entry/article -->
         
 
@@ -73,7 +70,7 @@
                         <li class="depth-1 comment">
 
                             <div class="comment__avatar">
-                                <img class="avatar" src="images/avatars/user-01.jpg" alt="" width="50" height="50">
+                                <img class="avatar" src="images/avatars/<?php echo$_SESSION['profil_picture'] ?>" alt="" width="50" height="50">
                             </div>
 
                             <div class="comment__content">

@@ -8,13 +8,13 @@ if (isset($_SESSION['id']))
     <div class="row comment-respond">
         <div id="respond" class="col-full">
 
-            <h3 class="h2">New<span>Article</span></h3>
+            <h3 class="h2">Vous allez modifier un article !</h3>
 
-            <form name="articleForm" id="contactForm" method="post" action="index.php?action=newArticle" autocomplete="off" enctype="multipart/form-data">
+            <form name="articleForm" id="contactForm" method="post" action="index.php?action=edit&id=<?php echo($_GET['id']) ?>" autocomplete="off">
                 <fieldset>
 
                     <div class="form-field">
-                        <input name="Name" id="cName" class="full-width" placeholder="Your Name*" value="" type="text">
+                        <input name="id" id="cName" class="full-width" placeholder="Your Name*" value="<?php echo($post['id']); ?>" type="text">
                     </div>
 
                     <div class="form-field">
@@ -27,17 +27,14 @@ if (isset($_SESSION['id']))
                        <label for="play_book">play_book</label>
                    </div>
                     <div class="form-field">
-                        <input name="title" id="cName" class="full-width" placeholder="titre de l'article" value="" type="text">
+                        <input name="title" id="cName" class="full-width" placeholder="titre de l'article" value="<?php echo($post['post_title']); ?>" type="text">
                     </div>
 
                     <div class="message form-field">
-                        <textarea name="content" id="cMessage" class="full-width" placeholder="Your article*"></textarea>
-                    </div>
-                    <div class="form-field">
-                      <input type="file" name="file">
+                        <textarea name="content" id="cMessage" class="full-width" placeholder="Your article*"> <?php echo($post['post_content']); ?> </textarea>
                     </div>
 
-                    <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Add Article" type="submit">
+                    <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Modifier" type="submit">
 
                 </fieldset>
             </form> <!-- end form -->
@@ -45,7 +42,6 @@ if (isset($_SESSION['id']))
         </div>
     </div>
 </section>
-
 
 <?php
 
@@ -65,5 +61,4 @@ if (isset($_SESSION['id']))
 
         ";
   }
-
 ?>

@@ -1821,6 +1821,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   height: 25px;
 }
 
+
 /* -------------------------------------------------------------------
  * ## header search trigger
  * ------------------------------------------------------------------- */
@@ -3983,10 +3984,10 @@ footer [class*="s-footer__"] > .row [class*="col-"]:last-child {
 }
 
 .comment__avatar img {
-  height: 6.6rem;
-  width: 6.6rem;
+  height: 4.4rem;
+  width: 4.4rem;
   border-radius: 100%;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 .comment__info {

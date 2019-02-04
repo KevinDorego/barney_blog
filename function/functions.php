@@ -42,7 +42,7 @@ function edit_post($bdd, $title, $content,$ida, $cat,$id)
 // ----- FONCTION "AFFICHAGE ARTICLES page accueil" -----
 function search_all_posts($bdd)
 {
-   $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id, a.firstname, c.name, c.img, c.imggrande,p.up_date FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id ORDER BY up_date DESC');
+   $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id,p.id_authors, a.firstname, c.name, c.img, c.imggrande,p.up_date FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id ORDER BY up_date DESC');
    $reponse->execute();
    $list_post =array();
    while ($post = $reponse->fetch())

@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^post-([0-9]+)$    index.php?page=details&id=$1 
+RewriteRule ^delete-([0-9]+)$  index.php?page=delete&id=$1 
+RewriteRule ^edit-([0-9]+)$    index.php?page=edit&id=$1 
+RewriteRule ^index-([0-9]+)$   index.php?action=edit&id=$1 [L]
+</IfModule>

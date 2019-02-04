@@ -10,11 +10,11 @@ if (isset($_SESSION['id']))
 
             <h3 class="h2">Vous allez modifier un article !</h3>
 
-            <form name="articleForm" id="contactForm" method="post" action="index.php?action=edit&id=<?php echo($_GET['id']) ?>" autocomplete="off">
+            <form name="articleForm" id="contactForm" method="post" action="index-<?php echo($_GET['id']) ?>" autocomplete="off" >
                 <fieldset>
 
                     <div class="form-field">
-                        <input name="id" id="cName" class="full-width" placeholder="Your Name*" value="<?php echo($post['id']); ?>" type="text">
+                        <input name="id" id="cName" class="full-width" placeholder="Your Name*" value="<?php echo($post['id']); ?>" type="text" style="display: none;">
                     </div>
 
                     <div class="form-field">

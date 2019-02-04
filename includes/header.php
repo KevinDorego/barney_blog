@@ -55,22 +55,6 @@
             </a>
         </div> <!-- end header__logo -->
 
-
-<!--         <a class="header__search-trigger" href="#0"></a>
-        <div class="header__search">
-            
-            
-            <form role="search" method="get" class="header__search-form" action="#">
-                <label>
-                    <span class="hide-content">Recherche:</span>
-                    <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Recherche:" autocomplete="off">
-                </label>
-                <input type="submit" class="search-submit" value="Recherche">
-            </form>
-
-            <a href="#0" title="Close Search" class="header__overlay-close">Fermer</a>
-        </div> -->  <!-- end header__search -->
-
         <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
         <nav class="header__nav-wrap">
 
@@ -92,6 +76,7 @@
                     if (isset($_SESSION['id']))
                     {
                         echo('<a href="index.php?stopsession=yes" title="">Deconnection</a>');
+
                      }
                      else
                      {
@@ -99,10 +84,17 @@
                      }
                     ?>
                 </li>
-                <li><div class="comment__avatar">
-                                <img class="avatar" src="images/avatars/<?php echo$_SESSION['profil_picture'] ?>" alt="" width="50" height="50">
-                            </div>
-                </li>
+
+                    <?php
+                    if (isset($_SESSION['id']))
+                    {
+                        echo
+                        ('<li class="comment__avatar avatar">
+                            <img src="images/avatars/'.$_SESSION['profil_picture'].'" alt="" width="50" height="50">       
+                        </li>');
+                    } 
+                    ?>
+
             </ul> <!-- end header__nav -->
 
             <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Fermer</a>

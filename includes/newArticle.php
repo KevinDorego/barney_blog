@@ -13,9 +13,7 @@ if (isset($_SESSION['id']))
             <form name="articleForm" id="contactForm" method="post" action="index.php?action=newArticle" autocomplete="off" enctype="multipart/form-data">
                 <fieldset>
 
-                    <div class="form-field">
-                        <input name="Name" id="cName" class="full-width" placeholder="Your Name*" value="" type="text">
-                    </div>
+                    
 
                     <div class="form-field">
                        <input type="radio" id="bro_code" name="cat" value=1 checked>

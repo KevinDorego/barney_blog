@@ -22,8 +22,10 @@
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
+<!--
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
+-->
 
     <!-- favicons
     ================================================== -->
@@ -84,6 +86,14 @@
                      }
                     ?>
                 </li>
+                
+                    <?php 
+                        if(!isset($_SESSION['id']))
+                        {
+                            echo('<li><a href="index.php?page=inscription">Inscription</a></li>');
+                        }
+                    ?>
+                
 
                     <?php
                     if (isset($_SESSION['id']))

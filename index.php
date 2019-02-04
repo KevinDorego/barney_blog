@@ -56,6 +56,11 @@ if(isset($_GET['action']) && ($_GET['action'])=='edit')
     edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id']);
 }
 
+// ----- AJOUT AUTEUR -----
+if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])& ($_GET['action'])=='newAuthors')
+{
+    add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password']);
+}
 
 require('includes/header.php');
 
@@ -101,6 +106,10 @@ if (!isset ($_GET['page']))
             case 'edit':
             $post = one_post($bdd,$_GET['id']);
             require('includes/edit.php');
+            break;
+            
+            case 'inscription':
+            require('includes/inscription.php');
             break;
 
             default:

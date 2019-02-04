@@ -12,8 +12,7 @@ function search_user ($bdd, $email, $password)
 // ----- FONCTION "AJOUTER ARTICLE" -----
 function add_article($bdd, $title, $content,$ida, $cat,$file)
 {
-  var_dump($file);
-  var_dump('toto');
+ 
   $ext = explode('.',$file['name']);
   $extension=end($ext);
   $new_name = MD5($file['name'].time());
@@ -61,6 +60,13 @@ function one_post($bdd,$id)
   $post=$reponse->fetch();
   $reponse->closeCursor();
   return $post;
+}
+
+function add_author($bdd,$firstname,$lastname,$email,$password){
+
+    $reponse = $bdd->prepare('INSERT INTO authors(firstname,lastname,email,date_creation,password,level,profil_picture)
+    VALUES(?,?,?,?,?,?,?)');
+    $reponse->execute(array($firstname, $lastname, $email,date("Y-m-d H:i:s"),MD5($password),2,$profil_picture));
 }
 
 ?>

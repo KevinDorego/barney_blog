@@ -117,7 +117,7 @@
                             <a href='category.html'>".$value['name']."</a> 
                         </div>
     
-                        <h1 class='item-entry__title'><a href='post-".$value['id']."'>".($value['post_title'])."</a></h1>
+                        <h1 class='item-entry__title'><a href='post-".$value['id']."'>".$value['post_title']."</a></h1>
                                 
                         <div class='item-entry__date'>
                             <a href='post-".$value['id']."'>".date('m-d-y',strtotime($value['up_date']))."</a></br>";

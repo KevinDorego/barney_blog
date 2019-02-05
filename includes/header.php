@@ -100,7 +100,7 @@
                     {
                         echo
                         ('<li class="comment__avatar avatar">
-                            <img src="images/avatars/'.$_SESSION['profil_picture'].'" alt="" width="50" height="50">       
+                            <a href="index.php?page=profil_gestion"><img src="images/avatars/'.$_SESSION['profil_picture'].'" alt="" width="50" height="50"></a>    
                         </li>');
                     } 
                     ?>

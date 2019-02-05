@@ -1,5 +1,13 @@
 <?php
 
+// ----- FONCTION "INSCRIPTION" -----
+function add_author($bdd,$firstname,$lastname,$email,$password){
+
+    $reponse = $bdd->prepare('INSERT INTO authors(firstname,lastname,email,date_creation,password,level,profil_picture)
+    VALUES(?,?,?,?,?,?,?)');
+    $reponse->execute(array($firstname, $lastname, $email,date("Y-m-d H:i:s"),MD5($password),2,$profil_picture));
+}
+
 // ----- FONCTION "USER CONNECTION" -----
 function search_user ($bdd, $email, $password)
 {
@@ -7,6 +15,23 @@ function search_user ($bdd, $email, $password)
    $reponse->execute(array($email, MD5($password)));
    $user=$reponse->fetch();
    return $user;
+}
+
+// ----- FONCTION "PROFIL_GESTION" -----
+function profil_gestion ($bdd, $id)
+{
+  $reponse = $bdd->prepare('select id, firstname, lastname, email, password, profil_picture from authors where id=?');
+  $reponse->execute(array($id));
+  $info_user=$reponse->fetch();
+  return $info_user;
+}
+
+// ----- FONCTION "PROFIL_UPDATE" -----
+function profil_update ($bdd, $firstname, $lastname, $password, $profil_picture)
+{
+  $reponse = $bdd->prepare('update authors SET firstname= ?, lastname= ?, password= ?,profil_picture= ?, WHERE id= ?');
+  $reponse->execute(array($firstname, $lastname, $password, $profil_picture, $id));
+
 }
 
 // ----- FONCTION "AJOUTER ARTICLE" -----
@@ -60,13 +85,6 @@ function one_post($bdd,$id)
   $post=$reponse->fetch();
   $reponse->closeCursor();
   return $post;
-}
-
-function add_author($bdd,$firstname,$lastname,$email,$password){
-
-    $reponse = $bdd->prepare('INSERT INTO authors(firstname,lastname,email,date_creation,password,level,profil_picture)
-    VALUES(?,?,?,?,?,?,?)');
-    $reponse->execute(array($firstname, $lastname, $email,date("Y-m-d H:i:s"),MD5($password),2,$profil_picture));
 }
 
 ?>

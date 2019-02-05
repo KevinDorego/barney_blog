@@ -56,6 +56,12 @@ if(isset($_GET['action']) && ($_GET['action'])=='edit')
     edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id']);
 }
 
+// // ----- MODIFIER PROFIL -----
+// if (isset($_GET['action']) && ($_GET['action'])=='profil_gestion')
+// {
+//     profil_gestion($bdd, );
+// }
+
 // ----- AJOUT AUTEUR -----
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])& ($_GET['action'])=='newAuthors')
 {
@@ -110,6 +116,11 @@ if (!isset ($_GET['page']))
             
             case 'inscription':
             require('includes/inscription.php');
+            break;
+
+            case 'profil_gestion':
+            $info_user = profil_gestion($bdd,$_SESSION['id']);
+            require('includes/profil_gestion.php');
             break;
 
             default:

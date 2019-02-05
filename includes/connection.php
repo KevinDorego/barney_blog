@@ -4,7 +4,7 @@
 
            <h3 class="h2">Se<span>Connecter</span></h3>
 
-           <form name="articleForm" id="contactForm" method="post" autocomplete="off" action="index.php">
+           <form name="articleForm" id="contactForm" method="post" autocomplete="off" action="index.php?action=connection">
                <fieldset>
                    <div class="form-field">
                        <input name="login" id="cName" class="full-width" placeholder="Your Mail" value="" type="text">

@@ -27,10 +27,10 @@ function profil_gestion ($bdd, $id)
 }
 
 // ----- FONCTION "PROFIL_UPDATE" -----
-function profil_update ($bdd, $firstname, $lastname, $password, $profil_picture)
+function profil_update ($bdd, $firstname, $lastname,  $password,$mail, $id)
 {
-  $reponse = $bdd->prepare('update authors SET firstname= ?, lastname= ?, password= ?,profil_picture= ?, WHERE id= ?');
-  $reponse->execute(array($firstname, $lastname, $password, $profil_picture, $id));
+  $reponse = $bdd->prepare('update authors SET firstname= ?, lastname= ?, password= ?,email=?, profil_picture= "user-02.jpg" WHERE id= ?');
+  $reponse->execute(array($firstname, $lastname, MD5($password),$mail, $id));
 
 }
 

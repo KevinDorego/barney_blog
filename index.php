@@ -6,7 +6,7 @@ require('function/functions.php');
 
 
 // ----- CONNECTION -----
-if(isset($_POST['login']) && isset($_POST['password']))
+if(isset($_POST['login']) && isset($_POST['password']) && isset($_GET['action']) && $_GET['action'] == 'connection')
 {
   $user = search_user($bdd, $_POST['login'], $_POST['password']);
   if ($user)
@@ -18,7 +18,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
     $_SESSION['email'] = $user['email'];
     $_SESSION['level'] = $user['level'];
     $_SESSION['profil_picture'] = $user['profil_picture'];
-    echo $_SESSION['profil_picture'];
+   
   }
   else
   {
@@ -56,14 +56,15 @@ if(isset($_GET['action']) && ($_GET['action'])=='edit')
     edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id']);
 }
 
-// // ----- MODIFIER PROFIL -----
-// if (isset($_GET['action']) && ($_GET['action'])=='profil_gestion')
-// {
-//     profil_gestion($bdd, );
-// }
+ // ----- MODIFIER PROFIL -----
+ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password']) && isset($_POST['id']) && isset($_GET['action']) && $_GET['action'] == 'update_profil' ){
+     
+     profil_update($bdd, $_POST['firstname'], $_POST['lastname'],$_POST['password'],$_POST['login'],$_POST['id']);
+     
+ }
 
 // ----- AJOUT AUTEUR -----
-if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])& ($_GET['action'])=='newAuthors')
+if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])&& ($_GET['action'])=='newAuthors')
 {
     add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password']);
 }

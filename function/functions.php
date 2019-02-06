@@ -1,11 +1,15 @@
 <?php
 
 // ----- FONCTION "INSCRIPTION" -----
-function add_author($bdd,$firstname,$lastname,$email,$password){
-
+function add_author($bdd,$firstname,$lastname,$email,$password, $file)
+{
+    $ext = explode('.',$file['name']);
+    $extension=end($ext);
+    $new_name = MD5($file['name'].time());
+    move_uploaded_file($file['tmp_name'], 'images/avatars/'.$new_name.'.'.$extension);
     $reponse = $bdd->prepare('INSERT INTO authors(firstname,lastname,email,date_creation,password,level,profil_picture)
-    VALUES(?,?,?,?,?,?,?)');
-    $reponse->execute(array($firstname, $lastname, $email,date("Y-m-d H:i:s"),MD5($password),2,$profil_picture));
+                              VALUES(?,?,?,?,?,?,?)');
+    $reponse->execute(array($firstname, $lastname, $email,date("Y-m-d H:i:s"),MD5($password),2,$new_name.'.'.$extension));
 }
 
 // ----- FONCTION "USER CONNECTION" -----

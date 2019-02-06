@@ -91,8 +91,9 @@ function one_post($bdd,$id)
   return $post;
 }
 // ----- FONCTION "choix catégories" -----
-function one_cat($bdd, $id){
-    $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id, p.file,p.id_cat, a.firstname, c.name, c.img, c.imggrande,p.up_date FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id WHERE p.id_cat ='.$_GET[id]);
+function one_cat($bdd, $id)
+{
+    $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id, p.file,p.id_cat, a.firstname, c.name, c.img, c.imggrande,c.description,p.up_date FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id WHERE p.id_cat ='.$id);
         $reponse->execute();
         $list_cat=array();
     while ($cat= $reponse->fetch())

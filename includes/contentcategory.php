@@ -7,28 +7,13 @@
         <div class="col-full s-content__header" data-aos="fade-up">
             <h1 class="display-1 display-1--with-line-sep">Category:
                 <?php
-   
- if (isset ($_GET['cat']))
-{
-    switch($_GET['cat'])
-    {
-        case 'bro_code':
-            echo 'Le pote code';
-            break;
-            
-        case 'play_book':
-            echo 'Le livre des rôles';
-            break;
-        
-        default:
-            echo 'Toutes les catégories';
-            break;
-    }
-}
-
+                
+                    echo $post_cat[0]['name'];
 ?>
             </h1>
-            <p class="lead">Dolor similique vitae. Exercitationem quidem occaecati iusto. Id non vitae enim quas error dolor maiores ut. Exercitationem earum ut repudiandae optio veritatis animi nulla qui dolores.</p>
+            <p class="lead"><?php 
+                
+                echo utf8_encode($post_cat[0]['description']); ?></p>
         </div>
     </div>
 
@@ -38,7 +23,8 @@
             
     foreach($post_cat as $value)
         
-    {  echo"
+    {  echo "
+    
             <article class='col-block'>
             
                 <div class='item-entry' data-aos='zoom-in'>
@@ -53,7 +39,7 @@
                             <a href='category.html'>".$value['name']."</a>
                         </div>
 
-                        <h1 class='item-entry__title'><a href='post-".$value['id']."'>".$value['post_title']."</a></h1>
+                        <h1 class='item-entry__title'><a href='post-".$value['id']."'>".utf8_encode($value['post_title'])."</a></h1>
 
                         <div class='item-entry__date'>
                             <a href='post-".$value['id']."'>".date('m-d-y',strtotime($value['up_date']))."</a>
@@ -73,8 +59,8 @@
             <nav class="pgn" data-aos="fade-up">
                 <ul>
                     <li><a class="pgn__prev" href="#0">Prev</a></li>
-                    <li><a class="pgn__num" href="#0">1</a></li>
-                    <li><span class="pgn__num current">2</span></li>
+                    <li><a class="pgn__num current" href="#0">1</a></li>
+                    <li><span class="pgn__num ">2</span></li>
                     <li><a class="pgn__num" href="#0">3</a></li>
                     <li><a class="pgn__num" href="#0">4</a></li>
                     <li><a class="pgn__num" href="#0">5</a></li>

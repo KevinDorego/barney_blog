@@ -93,6 +93,12 @@
 
 <section class="s-content">  
         <div class="row entries-wrap wide">
+           <?php  if (isset($_SESSION['id']))
+                        {   
+
+          echo" <a class='btn--primary btn' href='index.php?page=new_article'>New Article</a>";
+      }
+          ?>
             <div class="entries">
 <?php
 //            $users = file_get_contents("articles_test.json");
@@ -139,12 +145,7 @@
             </article>" ;
     }
 
- if (isset($_SESSION['id']))
-                        {   
-
-          echo" <a class='btn--primary btn' href='index.php?page=new_article'>New Article</a>";
-      }
-      
+    
 ?>
             </div>
         </div>

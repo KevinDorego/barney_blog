@@ -87,6 +87,18 @@ function one_post($bdd,$id)
   return $post;
 }
 
+function one_cat($bdd, $id_cat){
+    $reponse = $bdd->prepare('SELECT * FROM posts WHERE id_cat =1');
+        $reponse->execute();
+        $list_cat=array();
+    while ($cat=$reponse->fetch())
+    {
+        $list_cat[] = $cat;
+    }
+    $reponse->closeCursor();
+    return $list_cat;
+}
+
 ?>
 
 

@@ -72,6 +72,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['logi
 require('includes/header.php');
 
 
+
 // ----- INCLUDES (APPELS DES VUES) -----
 if (!isset ($_GET['page']))
 {
@@ -83,7 +84,9 @@ if (!isset ($_GET['page']))
     else{switch ($_GET['page']) 
         {
             case 'category':
+            $post_cat = one_cat($bdd,$_GET['id'] );
             require('includes/contentcategory.php');
+            break;
 
             case 'about':
             require('includes/contentabout.php');

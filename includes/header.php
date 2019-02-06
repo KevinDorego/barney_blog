@@ -67,8 +67,8 @@
                 <li class="has-children">
                     <a href="#0" title="">Catégories</a>
                     <ul class="sub-menu">
-                        <li><a href="index.php?page=category">Le Pote Code</a></li>
-                        <li><a href="index.php?page=category">Le Livre des rôles</a></li>
+                        <li><a href="index.php?page=category&cat=bro_code">Le Pote Code</a></li>
+                        <li><a href="index.php?page=category&cat=play_book">Le Livre des rôles</a></li>
                     </ul>
                 </li>
                 <li><a href="index.php?page=about" title="">À propos</a></li>

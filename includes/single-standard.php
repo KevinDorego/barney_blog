@@ -21,7 +21,7 @@
                 <h1 class="entry__header-title display-1">
                     <?php
                 
-                         echo ($post['post_title']);
+                         echo (utf8_encode($post['post_title']));
                      
                     ?>
                 </h1>

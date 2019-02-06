@@ -5,24 +5,24 @@
             <div class="col-full">
 
                 <div class="featured-slider featured" data-aos="zoom-in">
-
+                
                     <div class="featured__slide">
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-guitarman.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('images/thumbs/post/<?php echo $all_posts[0]['file'] ?>');"></div>
                             
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Music</a></span>
+                                <span class="entry__category"><a href="#0"><?php echo $all_posts[0]['name'] ?></a></span>
 
-                                <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
+                                <h1><a href="#0" title=""><?php echo $all_posts[0]['post_title'] ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-05.jpg" alt="">
+                                        <img class="avatar" src="images/avatars/<?php echo $all_posts[0]['profil_picture'] ?>" alt="">
                                     </a>
                                     <ul class="entry__meta">
-                                        <li><a href="#0">Jonathan Smith</a></li>
-                                        <li>June 02, 2018</li>
+                                        <li><a href="#0"><?php echo $all_posts[0]['firstname'] ?></a></li>
+                                        <li><?php echo date('m-d-y',strtotime($all_posts[0]['up_date']))?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -34,21 +34,21 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-watch.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('images/thumbs/post/<?php echo $all_posts[1]['file'] ?>');"></div>
                             
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Management</a></span>
+                                <span class="entry__category"><a href="#0"><?php echo $all_posts[1]['name'] ?></a></span>
 
-                                <h1><a href="#0" title="">The Pomodoro Technique Really Works.</a></h1>
+                                <h1><a href="#0" title=""><?php echo $all_posts[1]['post_title'] ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                        <img class="avatar" src="images/avatars/<?php echo $all_posts[1]['profil_picture'] ?>" alt="">
                                     </a>
 
                                     <ul class="entry__meta">
-                                        <li><a href="#0">John Doe</a></li>
-                                        <li>June 13, 2018</li>
+                                        <li><a href="#0"><?php echo $all_posts[1]['firstname'] ?></a></li>
+                                        <li><?php echo date('m-d-y',strtotime($all_posts[1]['up_date']))?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->
@@ -61,21 +61,21 @@
 
                         <div class="entry">
 
-                            <div class="entry__background" style="background-image:url('images/thumbs/featured/featured-beetle.jpg');"></div>
+                            <div class="entry__background" style="background-image:url('images/thumbs/post/<?php echo $all_posts[2]['file'] ?>');"></div>
 
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">LifeStyle</a></span>
+                                <span class="entry__category"><a href="#0"><?php echo $all_posts[2]['name'] ?></a></span>
 
-                                <h1><a href="#0" title="">The difference between Classics, Vintage  Antique Cars.</a></h1>
+                                <h1><a href="#0" title=""><?php echo $all_posts[2]['post_title'] ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
-                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                        <img class="avatar" src="images/avatars/<?php echo $all_posts[2]['profil_picture'] ?>" alt="">
                                     </a>
 
                                     <ul class="entry__meta">
-                                        <li><a href="#0">John Doe</a></li>
-                                        <li>June 12, 2018</li>
+                                        <li><a href="#0"><?php echo $all_posts[2]['firstname'] ?></a></li>
+                                        <li><?php echo date('m-d-y',strtotime($all_posts[2]['up_date']))?></li>
                                     </ul>
                                 </div>
                             </div> <!-- end entry__content -->

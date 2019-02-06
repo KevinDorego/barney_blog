@@ -45,7 +45,7 @@ function add_article($bdd, $title, $content,$ida, $cat,$file)
   $ext = explode('.',$file['name']);
   $extension=end($ext);
   $new_name = MD5($file['name'].time());
-  move_uploaded_file($file['tmp_name'], 'images/'.$new_name.'.'.$extension);
+  move_uploaded_file($file['tmp_name'], 'images/thumbs/post/'.$new_name.'.'.$extension);
   $reponse = $bdd->prepare('INSERT INTO posts(post_title,post_content, id_authors, id_cat, file, created_date, up_date)
                             VALUES(?,?,?,?,?,?,?)');
   $reponse->execute(array($title, $content, $ida, $cat,$new_name.'.'.$extension, date("Y-m-d H:i:s"),date("Y-m-d H:i:s")));
@@ -55,22 +55,27 @@ function add_article($bdd, $title, $content,$ida, $cat,$file)
 function delete_post ($bdd, $id)
 {
   $my_post = one_post($bdd,$id);
-  unlink('images/'.$my_post['file']);
+  unlink('images/thumbs/post/'.$my_post['file']);
   $reponse = $bdd -> prepare ('DELETE  FROM posts WHERE id=?');
   $reponse->execute(array($id));
 }
 
 // ----- FONCTION "MODIFIER ARTICLE" -----
-function edit_post($bdd, $title, $content,$ida, $cat,$id)
+function edit_post($bdd, $title, $content,$ida, $cat,$id,$file)
 {
-  $reponse = $bdd->prepare('update posts SET post_title= ?, post_content= ?, id_authors= ?,id_cat= ?, up_date= ? WHERE id= ?');
-  $reponse->execute(array($title, $content, $ida, $cat, date("Y-m-d H:i:s"), $id));  
+  $ext = explode('.',$file['name']);
+  $extension=end($ext);
+  $new_name = MD5($file['name'].time());
+  move_uploaded_file($file['tmp_name'], 'images/thumbs/post/'.$new_name.'.'.$extension);
+  
+    $reponse = $bdd->prepare('update posts SET post_title= ?, post_content= ?, id_authors= ?,id_cat= ?, up_date= ? file=? WHERE id= ?');
+  $reponse->execute(array($title, $content, $ida, $cat, date("Y-m-d H:i:s"), $id,$new_name.'.'.$extension));  
 }
 
 // ----- FONCTION "AFFICHAGE ARTICLES page accueil" -----
 function search_all_posts($bdd)
 {
-   $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id,p.id_authors, a.firstname, c.name, c.img, c.imggrande,p.up_date FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id ORDER BY up_date DESC');
+   $reponse = $bdd->prepare('select p.post_title, p.post_content,p.id,p.id_authors, a.firstname,a.profil_picture, c.name, c.img, c.imggrande,p.up_date,p.file FROM posts as p inner join authors as a on p.id_authors = a.id inner join category as c on p.id_cat = c.id ORDER BY up_date DESC');
    $reponse->execute();
    $list_post =array();
    while ($post = $reponse->fetch())

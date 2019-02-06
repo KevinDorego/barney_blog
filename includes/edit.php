@@ -10,7 +10,7 @@ if (isset($_SESSION['id']))
 
             <h3 class="h2">Vous allez modifier un article !</h3>
 
-            <form name="articleForm" id="contactForm" method="post" action="index-<?php echo($_GET['id']) ?>" autocomplete="off" >
+            <form name="articleForm" id="contactForm" method="post" action="index-<?php echo($_GET['id']) ?>" autocomplete="off" enctype="multipart/form-data" >
                 <fieldset>
 
                     <div class="form-field">
@@ -32,6 +32,9 @@ if (isset($_SESSION['id']))
 
                     <div class="message form-field">
                         <textarea name="content" id="cMessage" class="full-width" placeholder="Your article*"> <?php echo($post['post_content']); ?> </textarea>
+                    </div>
+                    <div class="form-field">
+                      <input type="file" name="file">
                     </div>
 
                     <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Modifier" type="submit">

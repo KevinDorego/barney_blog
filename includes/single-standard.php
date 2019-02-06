@@ -52,7 +52,7 @@
                 
             </div> <!-- s-entry__main -->
             <div>
-                <img src="images/<?php echo $post['file']?>">
+                <img src="images/thumbs/post/<?php echo $post['file']?>">
             </div>
         </article> <!-- end entry/article -->
         

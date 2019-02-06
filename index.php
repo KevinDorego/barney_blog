@@ -53,7 +53,7 @@ if(isset($_GET['action']) && ($_GET['action'])=='delete')
 // ----- MODIFIER ARTICLE -----
 if(isset($_GET['action']) && ($_GET['action'])=='edit')
 {  
-    edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id']);
+    edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id'],$_FILES['file']);
 }
 
  // ----- MODIFIER PROFIL -----

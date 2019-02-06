@@ -66,7 +66,7 @@ if(isset($_GET['action']) && ($_GET['action'])=='edit')
 // ----- AJOUT AUTEUR -----
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])&& ($_GET['action'])=='newAuthors')
 {
-    add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password']);
+    add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password'], $_FILES['file']);
 }
 
 require('includes/header.php');

@@ -26,7 +26,7 @@ if (isset($_SESSION['id']))
                     </div>
 
                     <div class="form-field">
-                       <input name="login" id="cName" class="full-width" placeholder="Votre Adresse mail*" value="<?php echo($info_user['email']); ?>" type="text">
+                       <input name="login" id="cName" class="full-width" placeholder="Votre Adresse mail*" value="<?php echo($info_user['email']); ?>" type="email">
                    </div>
 
                     <div class="form-field">

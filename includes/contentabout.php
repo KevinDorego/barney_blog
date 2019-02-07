@@ -4,7 +4,7 @@
 
         <div class="row narrow">
             <div class="col-full s-content__header">
-                <h1 class="display-1 display-1--with-line-sep">About Wordsmith. </h1>
+                <h1 class="display-1 display-1--with-line-sep">À propos de Barney.</h1>
                 <p class="lead">
                 Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor 
                 sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim 

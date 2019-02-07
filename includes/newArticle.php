@@ -25,11 +25,11 @@ if (isset($_SESSION['id']))
                        <label for="play_book">play_book</label>
                    </div>
                     <div class="form-field">
-                        <input name="title" id="cName" class="full-width" placeholder="titre de l'article" value="" type="text">
+                        <input name="title" id="cName" class="full-width" placeholder="titre de l'article" value="" type="text" required>
                     </div>
 
                     <div class="message form-field">
-                        <textarea name="content" id="cMessage" class="full-width" placeholder="Your article*"></textarea>
+                        <textarea name="content" id="cMessage" class="full-width" placeholder="Your article*" required></textarea>
                     </div>
                     <div class="form-field">
                       <input type="file" name="file">

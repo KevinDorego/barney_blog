@@ -8,18 +8,18 @@
                 <fieldset>
 
                     <div class="form-field">
-                        <input name="firstname" id="cName" class="full-width" placeholder="Your Firstname*" value="" type="text">
+                        <input name="firstname" id="cName" class="full-width" placeholder="Your Firstname*" value="" type="text" required>
                     </div>
                     <div class="form-field">
-                        <input name="lastname" id="cName" class="full-width" placeholder="Your Lastname*" value="" type="text">
+                        <input name="lastname" id="cName" class="full-width" placeholder="Your Lastname*" value="" type="text" required>
                     </div>
 
                     <div class="form-field">
-                       <input name="login" id="cName" class="full-width" placeholder="Your Mail" value="" type="text">
+                       <input name="login" id="cName" class="full-width" placeholder="Your Mail" value="" type="email" required>
                    </div>
                    
                    <div class="form-field">
-                       <input name="password" id="cName" class="full-width" placeholder="Your Password" value="" type="password">
+                       <input name="password" id="cName" class="full-width" placeholder="Your Password" value="" type="password" required>
                    </div>
                   
                     <div class="form-field">

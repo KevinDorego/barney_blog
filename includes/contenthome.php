@@ -14,7 +14,7 @@
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><?php echo $all_posts[0]['name'] ?></a></span>
 
-                                <h1><a href="#0" title=""><?php echo $all_posts[0]['post_title'] ?></a></h1>
+                                <h1><a href="#0" title=""><?php echo utf8_encode($all_posts[0]['post_title']) ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
@@ -39,7 +39,7 @@
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><?php echo $all_posts[1]['name'] ?></a></span>
 
-                                <h1><a href="#0" title=""><?php echo $all_posts[1]['post_title'] ?></a></h1>
+                                <h1><a href="#0" title=""><?php echo utf8_encode($all_posts[1]['post_title']) ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
@@ -66,7 +66,7 @@
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0"><?php echo $all_posts[2]['name'] ?></a></span>
 
-                                <h1><a href="#0" title=""><?php echo $all_posts[2]['post_title'] ?></a></h1>
+                                <h1><a href="#0" title=""><?php echo utf8_encode($all_posts[2]['post_title']) ?></a></h1>
 
                                 <div class="entry__info">
                                     <a href="#0" class="entry__profile-pic">
@@ -89,7 +89,7 @@
             </div> <!-- end col-full -->
         </div>
     </section> <!-- end s-featured -->
-
+   
 
 <section class="s-content">  
         <div class="row entries-wrap wide">

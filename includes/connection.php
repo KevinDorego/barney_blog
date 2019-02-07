@@ -7,11 +7,11 @@
            <form name="articleForm" id="contactForm" method="post" autocomplete="off" action="index.php?action=connection">
                <fieldset>
                    <div class="form-field">
-                       <input name="login" id="cName" class="full-width" placeholder="Your Mail" value="" type="text">
+                       <input name="login" id="cName" class="full-width" placeholder="Your Mail" value="" type="text" required>
                    </div>
 
                    <div class="form-field">
-                       <input name="password" id="cName" class="full-width" placeholder="Your Password" value="" type="password">
+                       <input name="password" id="cName" class="full-width" placeholder="Your Password" value="" type="password" required>
                    </div>
 
                    <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Valider" type="submit">

@@ -66,7 +66,14 @@ if(isset($_GET['action']) && ($_GET['action'])=='edit')
 // ----- AJOUT AUTEUR -----
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])&& ($_GET['action'])=='newAuthors')
 {
-    add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password'], $_FILES['file']);
+    $mail_user = verif_mail($bdd, $_POST['login']);
+    
+    if($mail_user){
+        echo ('<script type="text/javascript">alert("mail non valide");</script>');
+    }else{
+        add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password'], $_FILES['file']);
+    }
+    
 }
 
 require('includes/header.php');

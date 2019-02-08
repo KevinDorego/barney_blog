@@ -120,16 +120,12 @@ function verif_mail($bdd, $email)
    return $mail_valid;
 }
 
+<<<<<<< HEAD
+=======
 // ----- FONCTION "vérif mail" -----
 
-function verif_mail($bdd, $email)
-{
-    $reponse = $bdd->prepare('SELECT * FROM authors WHERE email = ?');
-    $reponse->execute(array($email));
-   $mail_valid=$reponse->fetch();
-   return $mail_valid;
-}
 
+>>>>>>> 695456495ecec3857b2701e873de15363a6b7b97
 ?>
 
 

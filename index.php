@@ -38,48 +38,6 @@ if (isset($_GET['stopsession']) && ($_GET['stopsession']) == 'yes')
     session_destroy();
 }
 
-<<<<<<< HEAD
-// ----- AJOUT ARTICLE -----
-if(isset($_POST['title']) && isset($_POST['content']) && isset($_SESSION['id']) && isset($_POST['cat']) && ($_GET['action'])=='newArticle')
-{
-    add_article($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_FILES['file']);
-}
-
-// ----- SUPPRIMER ARTICLE -----
-if(isset($_GET['action']) && ($_GET['action'])=='delete')
-{ 
-    delete_post($bdd, $_GET['id']);
-}
-
-// ----- MODIFIER ARTICLE -----
-if(isset($_GET['action']) && ($_GET['action'])=='edit')
-{  
-    edit_post($bdd, $_POST['title'], $_POST['content'],$_SESSION['id'], $_POST['cat'],$_POST['id'],$_FILES['file']);
-}
-
- // ----- MODIFIER PROFIL -----
- if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password']) && isset($_POST['id']) && isset($_GET['action']) && $_GET['action'] == 'update_profil' )
- {
-     
-     profil_update($bdd, $_POST['firstname'], $_POST['lastname'],$_POST['password'],$_POST['login'],$_POST['id']);
-     
- }
-
-// ----- INSCRIPTION -----
-if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])&& ($_GET['action'])=='newAuthors')
-{
-    $mail_user = verif_mail($bdd, $_POST['login']);
-    
-    if($mail_user)
-    {
-        echo ('<script type="text/javascript">alert("mail non valide");</script>');
-    }else{
-        add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password'], $_FILES['file']);
-    }
-    
-}
-=======
->>>>>>> 695456495ecec3857b2701e873de15363a6b7b97
 
 //
 //// ----- AJOUT ARTICLE -----

@@ -9,5 +9,5 @@ $mail_user = verif_mail($bdd, $_POST['login']);
         add_author($bdd, $_POST['firstname'], $_POST['lastname'], $_POST['login'], $_POST['password'], $_FILES['file']);
     }
 }
-header('Location: http://localhost/Barney_blog/index.php');
+header('Location: http://localhost:8888/BLOG-CODE/barney_blog/');
 ?>

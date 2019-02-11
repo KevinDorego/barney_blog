@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require('function/connexion.php');
 require('function/functions.php');
@@ -37,7 +36,6 @@ if (isset($_GET['stopsession']) && ($_GET['stopsession']) == 'yes')
     unset($_SESSION['profil_picture']);
     session_destroy();
 }
-
 
 //
 //// ----- AJOUT ARTICLE -----
@@ -222,6 +220,7 @@ elseif(isset($_GET['action'])){
     }
 }
 else{
+
     $all_posts = search_all_posts($bdd);
     require('includes/contenthome.php');
 }

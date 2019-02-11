@@ -3,5 +3,5 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['logi
     
 profil_update($bdd, $_POST['firstname'], $_POST['lastname'],$_POST['password'],$_POST['login'],$_POST['id']);
 }
-header('Location: http://localhost/Barney_blog/index.php');
+header('Location: http://localhost:8888/BLOG-CODE/barney_blog/');
 ?>

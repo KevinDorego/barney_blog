@@ -1,10 +1,13 @@
 <?php
+
 session_start();
 require('function/connexion.php');
 require('function/functions.php');
 
 
-// ----- CONNECTION -----
+
+
+// --------------- CONNECTION ---------------
 if(isset($_POST['login']) && isset($_POST['password']) && isset($_GET['action']) && $_GET['action'] == 'connection')
 {
   $user = search_user($bdd, $_POST['login'], $_POST['password']);
@@ -25,7 +28,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_GET['action'])
   }
 }
 
-// ----- DECONNECTION -----
+// --------------- DECONNECTION ---------------
 if (isset($_GET['stopsession']) && ($_GET['stopsession']) == 'yes')
 {
     unset($_SESSION['id']);
@@ -37,109 +40,14 @@ if (isset($_GET['stopsession']) && ($_GET['stopsession']) == 'yes')
     session_destroy();
 }
 
-//
-//// ----- AJOUT ARTICLE -----
-//if(isset($_POST['title']) && isset($_POST['content']) && isset($_SESSION['id']) && isset($_POST['cat']) && ($_GET['action'])=='newArticle')
-//{
-//    require('controleurs/controleurs_add_post.php');
-//}
-//
-//// ----- SUPPRIMER ARTICLE -----
-//if(isset($_GET['action']) && ($_GET['action'])=='delete')
-//{ 
-//    require('controleurs/controleurs_delete_post.php');
-//}
-//
-//// ----- MODIFIER ARTICLE -----
-//if(isset($_GET['action']) && ($_GET['action'])=='edit')
-//{  
-//    require('controleurs/controleurs_edit_post.php');
-//}
-//
-// // ----- MODIFIER PROFIL -----
-// if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password']) && isset($_POST['id']) && isset($_GET['action']) && $_GET['action'] == 'update_profil' ){
-//     
-//     require('controleurs/controleurs_edit_auteur.php');
-//     
-// }
-//
-//// ----- AJOUT AUTEUR -----
-//if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['login']) && isset($_POST['password'])&& ($_GET['action'])=='newAuthors') 
-//{
-//    require('controleurs/controleurs_add_auteur.php');
-//    
-//}
-//
+
 require('includes/header.php');
-//
-//
-//
-//// ----- INCLUDES (APPELS DES VUES) -----
-//if (!isset ($_GET['page']))
-//{
-//    $all_posts = search_all_posts($bdd);
-//   
-//    $title= "Ceci est un site d'entrainement";
-//    require('includes/contenthome.php');
-//}
-//    else{switch ($_GET['page']) 
-//        {
-//            case 'category':
-//            $post_cat = one_cat($bdd,$_GET['id'] );
-//            require('includes/contentcategory.php');
-//            break;
-//
-//            case 'about':
-//            require('includes/contentabout.php');
-//            break;
-//
-//            case 'contact':
-//            require('includes/contentcontact.php');
-//            break;
-//            
-//            case 'details':
-//            $post = one_post($bdd,$_GET['id']);
-//            require('includes/single-standard.php');
-//            break;
-//            
-//            case 'new_article':
-//            require('includes/newArticle.php');
-//            break;
-//            
-//            case 'connection':
-//            require('includes/connection.php');
-//            break;
-//            
-//            case 'delete':
-//            require('includes/delete.php');
-//            break;
-//
-//            case 'edit':
-//            $post = one_post($bdd,$_GET['id']);
-//            require('includes/edit.php');
-//            break;
-//            
-//            case 'inscription':
-//            require('includes/inscription.php');
-//            break;
-//
-//            case 'profil_gestion':
-//            $info_user = profil_gestion($bdd,$_SESSION['id']);
-//            require('includes/profil_gestion.php');
-//            break;
-//
-//            default:
-//            require('includes/contenthome.php');
-//            break;
-//    }}
 
 
-
-
-?>
-<?php
-if(isset($_GET['page'])){
-    switch($_GET['page']){
+if(isset($_GET['page']))
+{
+    switch($_GET['page'])
+    {
             
             case 'category':
             $post_cat = one_cat($bdd,$_GET['id'] );
@@ -183,12 +91,16 @@ if(isset($_GET['page'])){
             case 'profil_gestion':
             $info_user = profil_gestion($bdd,$_SESSION['id']);
             require('includes/profil_gestion.php');
-            break;
-            
+            break;        
     }
 }
-elseif(isset($_GET['action'])){
-    switch($_GET['action']){
+
+
+
+elseif(isset($_GET['action']))
+{
+    switch($_GET['action'])
+    {
             
             case 'newArticle':
             require('controleurs/controleurs_add_post.php');
@@ -213,16 +125,23 @@ elseif(isset($_GET['action'])){
             case 'connection':
             $all_posts = search_all_posts($bdd);
             require('includes/contenthome.php');
-            break;
-            
-            
-            
+            break;           
     }
 }
-else{
+
+
+else
+{
 
     $all_posts = search_all_posts($bdd);
     require('includes/contenthome.php');
 }
+
+
 require('includes/footer.php');
+
 ?>
+
+
+
+

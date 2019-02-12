@@ -3156,9 +3156,9 @@ body.search-is-visible {
  *
  * ------------------------------------------------------------------- */
 footer {
-  padding-top: 10.2rem;
-  padding-bottom: 10.2rem;
-  font-size: 1.5rem;
+  padding-top: 5.1rem;
+  padding-bottom: 5.1rem;
+  font-size: 1.8rem;
   line-height: 2;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -3170,7 +3170,7 @@ footer a {
 footer h4 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   line-height: 1.286;
   text-transform: uppercase;
   letter-spacing: .25rem;

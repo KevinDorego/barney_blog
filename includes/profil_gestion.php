@@ -10,7 +10,7 @@ if (isset($_SESSION['id']))
 
             <h3 class="h2">Vous allez modifier votre profil !</h3>
 
-            <form name="articleForm" id="contactForm" method="post" action="index.php?action=update_profil" autocomplete="off" >
+            <form name="articleForm" id="contactForm" method="post" action="index.php?action=update_profil" autocomplete="off" enctype="multipart/form-data" >
                 <fieldset>
                     <div class="form-field">
                         <input name="id" id="cName" class="full-width" placeholder="Your Name*" value="<?php echo($info_user['id']); ?>" type="text" style="display: none;">

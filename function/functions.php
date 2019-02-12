@@ -31,10 +31,19 @@ function profil_gestion ($bdd, $id)
 }
 
 // ----- FONCTION "PROFIL_UPDATE" -----
-function profil_update ($bdd, $firstname, $lastname,  $password,$mail, $id)
+function profil_update ($bdd, $firstname, $lastname,  $password,$mail,$file, $id)
 {
-  $reponse = $bdd->prepare('update authors SET firstname= ?, lastname= ?, password= ?,email=?, profil_picture= "user-02.jpg" WHERE id= ?');
-  $reponse->execute(array($firstname, $lastname, MD5($password),$mail, $id));
+    $my_profil = profil_gestion($bdd,$id);
+    if(isset($my_profil['profil_picture'])){
+        unlink('images/avatars/'.$my_profil['profil_picture']);
+    };
+    $ext = explode('.',$file['name']);
+  $extension=end($ext);
+  $new_name = MD5($file['name'].time());
+  move_uploaded_file($file['tmp_name'], 'images/avatars/'.$new_name.'.'.$extension);
+    
+  $reponse = $bdd->prepare('update authors SET firstname= ?, lastname= ?, password= ?,email=?, profil_picture=? WHERE id= ?');
+  $reponse->execute(array($firstname, $lastname, MD5($password),$mail,$new_name.'.'.$extension, $id));
 
 }
 

@@ -2,6 +2,7 @@
 session_start();
 require('function/connexion.php');
 require('function/functions.php');
+require('class/class_Post_query.php');
 
 
 // ----- CONNECTION -----
@@ -211,7 +212,7 @@ elseif(isset($_GET['action'])){
             break;
             
             case 'connection':
-            $all_posts = search_all_posts($bdd);
+//            $all_posts = search_all_posts($bdd);
             require('includes/contenthome.php');
             break;
             
@@ -220,8 +221,10 @@ elseif(isset($_GET['action'])){
     }
 }
 else{
-
-    $all_posts = search_all_posts($bdd);
+//        $postquery = new Postquery();
+        $all_posts = Postquery::search_all_post($bdd);
+        
+//    $all_posts = search_all_posts($bdd);
     require('includes/contenthome.php');
 }
 require('includes/footer.php');
